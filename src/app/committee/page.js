@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 
 const committeeData = {
@@ -79,9 +80,20 @@ const committeeData = {
 };
 
 const Committee = () => {
+	const handleDownload = () => {
+		const pdfUrl = "/PARTHIV_SARKER.pdf";
+
+		const link = document.createElement("a");
+		link.href = pdfUrl;
+		link.download = "Committee-List.pdf";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+	};
+
 	return (
-		<div className="container mx-auto md:px-4 md:py-8">
-			<h1 className="text-5xl md:text-7xl text-center font-extrabold mb-8 mt-20">
+		<div className="container mx-auto px-2 md:px-4 md:py-8">
+			<h1 className="text-4xl md:text-7xl text-center font-extrabold mt-28 mb-10">
 				Committee
 			</h1>
 			{Object.entries(committeeData).map(([sectionTitle, members], index) => (
@@ -98,6 +110,14 @@ const Committee = () => {
 					</ul>
 				</div>
 			))}
+			<div className="w-full flex justify-center items-center">
+				<button
+					className="text-lg font-bold bg-orange-600 px-8 py-2 rounded-xl text-white"
+					onClick={handleDownload}
+				>
+					Download
+				</button>
+			</div>
 		</div>
 	);
 };
