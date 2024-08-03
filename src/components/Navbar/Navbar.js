@@ -1,15 +1,17 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
-import Logo from "/public/assets/logo.png"
-import GnitLogo from "/public/assets/GNIT.png"
-import JisLogo from "/public/assets/jisgroup.png"
+import Logo from "/public/assets/logo.png";
+import GnitLogo from "/public/assets/GNIT.png";
+import JisLogo from "/public/assets/jisgroup.png";
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
+	const pathname = usePathname();
 
 	const handleNav = () => {
 		setNav(!nav);
@@ -27,26 +29,45 @@ const Navbar = () => {
 			{/* Logo */}
 			<h1 className="w-full pl-6">
 				<Link href="/">
-					<Image src={Logo} placeholder="blur" alt="logo" className="h-20 w-20" />
+					<Image
+						src={Logo}
+						placeholder="blur"
+						alt="logo"
+						className="h-20 w-20"
+					/>
 				</Link>
 			</h1>
 
 			{/* Desktop Navigation */}
 			<ul className="hidden md:flex md:pr-20">
 				{navItems.map((item) => (
-					<Link
-						href={item.navLink}
-						key={item.id}
-						className="w-28 text-lg font-bold text-center hover:bg-orange-600 rounded-xl m-2 cursor-pointer duration-300 hover:text-black"
-					>
-						{item.text}
+					<Link href={item.navLink} key={item.id}>
+						<li
+							className={`w-28 text-lg font-bold text-center rounded-xl m-2 cursor-pointer duration-300 ${
+								pathname === item.navLink
+									? "bg-orange-600 text-black"
+									: "hover:bg-orange-600 hover:text-black"
+							}`}
+						>
+							{item.text}
+						</li>
 					</Link>
 				))}
 			</ul>
 
 			<div className="hidden md:pr-20 md:flex md:gap-4">
-				<Image src={GnitLogo} placeholder="blur" alt="Gnit Logo" className="w-14 h-14" />
-				<Image src={JisLogo} placeholder="blur" alt="JIS Logo" className="w-14 h-14" />
+				<Image
+					src={GnitLogo}
+					placeholder="blur"
+					alt="Gnit Logo"
+					className="w-14 h-14"
+				/>
+				<Image
+					src={JisLogo}
+					placeholder="blur"
+					alt="JIS Logo"
+					className="w-14 h-14"
+				/>
 			</div>
 
 			{/* Mobile Navigation Icon */}
@@ -67,12 +88,26 @@ const Navbar = () => {
 					<Link
 						href={item.navLink}
 						key={item.id}
-						className="p-4 text-xl text-center w-full hover:bg-orange-600 rounded-xl duration-300 hover:text-black cursor-pointer"
+						className="p-4 text-xl font-extrabold text-center w-full hover:bg-orange-600 rounded-xl duration-300 hover:text-black cursor-pointer"
 						onClick={() => setNav(false)}
 					>
 						{item.text}
 					</Link>
 				))}
+				<div className="p-8 flex gap-4">
+					<Image
+						src={GnitLogo}
+						placeholder="blur"
+						alt="Gnit Logo"
+						className="w-14 h-14"
+					/>
+					<Image
+						src={JisLogo}
+						placeholder="blur"
+						alt="JIS Logo"
+						className="w-14 h-14"
+					/>
+				</div>
 			</ul>
 		</div>
 	);

@@ -7,7 +7,7 @@ const SectionC = () => {
 		<div>
 			<section className="w-screen md:h-[80vh] md:flex justify-around items-center px-10 md:gap-10">
 				<div className="md:w-[50%]">
-					<Image src={img} quality={100} className="w-[100vw] h-[60vh]"/>
+					<Image src={img} alt="Image" quality={100} className="w-[100vw] h-[60vh]"/>
 				</div>
 				<div className="md:w-[50%] text-pretty">
 					<h1 className="md:text-3xl font-semibold text-gray-500 mb-2 md:mb-6">Welcome To</h1>

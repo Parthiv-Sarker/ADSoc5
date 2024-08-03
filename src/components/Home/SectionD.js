@@ -40,6 +40,12 @@ const SectionD = () => {
 					</tbody>
 				</table>
 			</div>
+
+			<div className="w-screen flex flex-col justify-center items-center md:gap-10 mt-20 mb-20">
+				<h1 className="md:w-[80%] text-2xl md:text-7xl font-extrabold text-center mb-6 md:mb-10">Ready to Submit Publication? It’s just a matter of one click</h1>
+				<p className="md:w-[80%] text-sm md:text-2xl font-normal text-center">Accepted papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore’s scope and quality requirements</p>
+				<button className="w-32 md:w-56 h-10 md:h-16 md:text-3xl font-extrabold rounded-full bg-orange-600 hover:bg-orange-500 mt-20">Submit</button>
+			</div>
 		</section>
 	);
 };

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 
 const committeeData = {
@@ -93,7 +93,7 @@ const Committee = () => {
 
 	return (
 		<div className="container mx-auto px-2 md:px-4 md:py-8">
-			<h1 className="text-4xl md:text-7xl text-center font-extrabold mt-28 mb-10">
+			<h1 className="text-4xl md:text-7xl text-center font-extrabold py-28 md:py-0 md:mt-28 mb-0 md:mb-10">
 				Committee
 			</h1>
 			{Object.entries(committeeData).map(([sectionTitle, members], index) => (
@@ -110,9 +110,9 @@ const Committee = () => {
 					</ul>
 				</div>
 			))}
-			<div className="w-full flex justify-center items-center">
+			<div className="w-full flex justify-center items-center mb-10 md:mb-0 mt-8">
 				<button
-					className="text-lg font-bold bg-orange-600 px-8 py-2 rounded-xl text-white"
+					className="w-32 md:w-56 h-10 md:h-16 md:text-3xl font-extrabold rounded-full bg-orange-600 hover:bg-orange-500 mt-10"
 					onClick={handleDownload}
 				>
 					Download
