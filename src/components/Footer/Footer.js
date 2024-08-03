@@ -9,11 +9,11 @@ const Footer = () => {
 	const date = new Date();
 
 	return (
-		<div className="w-screen h-auto bg-slate-400 px-4 py-8 md:py-12 md:px-20">
+		<div className="w-screen h-auto bg-black text-white px-4 py-8 md:py-12 md:px-20">
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 				{/* Left Section */}
 				<div className="flex flex-col items-center md:items-start">
-					<Image src={Logo} className="w-28 h-28 mb-4" alt="Event Logo" />
+					<Image src={Logo} className="w-28 h-28 mb-4 bg-white rounded-2xl" alt="Event Logo" />
 					<p className="text-base font-bold text-center md:text-left mb-4">
 						AI-Driven Smart Healthcare for Society 5.0 (ADSoc5). The event will
 						be held from 14th to 15th February at Guru Nanak Institute of
@@ -56,7 +56,7 @@ const Footer = () => {
 
 			{/* Copyright Section */}
 			<div className="text-center mt-8">
-				<p className="text-lg font-semibold text-slate-600">
+				<p className="text-lg font-semibold text-slate-400">
 					© Copyright GNIT {date.getFullYear()}. All Rights Reserved.
 				</p>
 			</div>
