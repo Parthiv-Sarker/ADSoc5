@@ -81,7 +81,7 @@ const committeeData = {
 
 const Committee = () => {
 	const handleDownload = () => {
-		const pdfUrl = "/PARTHIV_SARKER.pdf";
+		const pdfUrl = "/Committee-List.pdf";
 
 		const link = document.createElement("a");
 		link.href = pdfUrl;
