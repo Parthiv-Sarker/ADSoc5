@@ -43,11 +43,11 @@ const SectionB = () => {
 
 	return (
 		<div className="mt-20 relative">
-			<h1 className="text-2xl md:text-6xl font-extrabold text-center md:mb-10">
+			<h1 className="text-2xl md:text-6xl font-extrabold text-center mb-0 md:mb-10">
 				Images
 			</h1>
-			<section className="w-screen flex flex-col justify-center items-center relative">
-				<div className="w-[98%] h-[80vh] md:h-[50vh] flex justify-center items-center overflow-hidden relative">
+			<section className="w-screen flex flex-col justify-center items-center relative px-2">
+				<div className="w-[98%] h-[50vh] md:h-[50vh] flex justify-center items-center overflow-hidden relative">
 					<div
 						className="flex transition-transform duration-500"
 						style={{ transform: `translateX(${-index * 100}%)` }}
