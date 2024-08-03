@@ -81,14 +81,9 @@ const committeeData = {
 
 const Committee = () => {
 	const handleDownload = () => {
-		const pdfUrl = "https://ad-soc5.vercel.app/Committee-List.pdf";
-
-		const link = document.createElement("a");
-		link.href = pdfUrl;
-		link.download = "Committee-List.pdf";
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
+		const pdfUrl =
+			"https://docs.google.com/uc?export=download&id=1lh_wjG9pOPfBxDmL3SsPhM59GgrtLSDU";
+		window.open(pdfUrl, "_blank");
 	};
 
 	return (
